@@ -469,7 +469,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('filters', callback_data='auto_manual'),
             ],[
             InlineKeyboardButton('gtrans', callback_data='gtrans'),
-            InlineKeyboardButton('info', callback_data='info'),
+            InlineKeyboardButton('😈info', callback_data='info'),
             InlineKeyboardButton('memes', callback_data='memes'),
             ],[
             InlineKeyboardButton('paste', callback_data='paste'),
