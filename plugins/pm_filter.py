@@ -41,8 +41,13 @@ async def give_filter(client, message):
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
-    if int(req) not in [query.from_user.id, 0]:
-        return await query.answer(f"⚠️ Hey, {query.from_user.first_name}! Search Your Own File, Don't Click Others Results 😬", show_alert=True)
+    ad_user = query.from_user.id
+    if int(ad_user) in ADMINS:
+        pass
+    elif int(req) not in [query.from_user.id, 0]:
+        return await query.answer(
+            "All right, but this is not yours.;\nNice Try! But, This Was Not Your Request, Request Yourself;",
+            show_alert=True)
     try:
         offset = int(offset)
     except:
